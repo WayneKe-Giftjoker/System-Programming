@@ -276,14 +276,14 @@ int main (int argc, char **argv) {
 			targetW = targetL;
 			childW = childL;
 			leafW = leafL;
-			waitpid(childR, &status, WNOHANG);
+			waitpid(childR, &status, 0);
 		}
 		else{
 			pipeW_r = pipe_r[R]; pipeW_w = pipe_w[R];
 			targetW = targetR;
 			childW = childR;
 			leafW = leafR;
-			waitpid(childL, &status, WNOHANG);
+			waitpid(childL, &status, 0);
 		}
 		while(flag == PASSFLAG){
 			//read from child
